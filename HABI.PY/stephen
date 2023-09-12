@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+
+def track_attendance():
+    attendance = []
+
+    while True:
+        print("\n1. Add member to attendance list")
+        print("2. View current attendance list")
+        print("3. Exit\n")
+
+        choice = input("Enter your choice (1-3): ")
+
+        if choice == "1":
+            member_name = input("Enter member name: ")
+            attendance.append(member_name)
+            print(f"{member_name} has been added to the attendance list.")
+
+        elif choice == "2":
+            if len(attendance) > 0:
+                print("\nCurrent attendance list:")
+                for member in attendance:
+                    print(member)
+            else:
+                print("No attendance recorded yet.")
+
+        elif choice == "3":
+            print("Exiting program...")
+            break
+
+        else:
+            print("Invalid choice. Please enter a valid option.")
+
+if __name__ == "__main__":
+    track_attendance()
